@@ -2,11 +2,13 @@
 $translate = $this->plugin('translate');
 $escape = $this->plugin('escapeHtml');
 $this->htmlElement('body')->appendAttribute('class', 'item resource browse');
+$this->headMeta()->appendName('robots', 'noindex');
 
 $filterLocale = (bool) $this->siteSetting('filter_locale_values');
 $lang = $this->lang();
 
 $query = $this->params()->fromQuery();
+
 $itemSetShow = isset($itemSet);
 if ($itemSetShow):
     $this->htmlElement('body')->appendAttribute('class', 'item-set');
